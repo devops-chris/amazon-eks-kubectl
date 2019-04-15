@@ -5,13 +5,14 @@ This is a convenient docker image that contains:
  - kubectl (v1.11.0)
  - aws-iam-authenticator (v0.3.0)
  - AWS CLI (v1.15.69)
+ - helm (v2.11.0)
 
 The default entrypoint for this container, is a small wrapper script for `kubectl` that automatically populates a `~/.kube/config` with the correct EKS cluster details (endpoint, certificate authority).
 
 ## Usage
 
 ```bash
-$ docker run -e CLUSTER=demo devops-chris/kubectl get services
+$ docker run -e CLUSTER=demo -e REGIION=us-east-1 thedevopschris/kubectl get services
 NAME            TYPE           CLUSTER-IP     EXTERNAL-IP        PORT(S)          AGE
 kubernetes      ClusterIP      10.100.0.1     <none>             443/TCP          57d
 ```
@@ -25,6 +26,6 @@ The AWS CLI will automatically pick up AWS credentials from environment variable
 If you already have AWS credentials configured in `~/.aws/credentials` you can pass these through by running:
 
 ```
-$ docker run -v ~/.aws:/home/kubectl/.aws -e CLUSTER=demo thedevopschris/kubectl get services
+$ docker run -v ~/.aws:/home/kubectl/.aws -e CLUSTER=demo -e REGIION=us-east-1 thedevopschris/kubectl get services
 ```
 
