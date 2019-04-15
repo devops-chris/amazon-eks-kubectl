@@ -22,7 +22,7 @@ RUN set -x && \
     # Install AWS CLI
     pip install --upgrade awscli && \
     # Basic check it works.
-    aws --version && kubectl version --client && helm version
+    aws --version && kubectl version --client && helm
 
 USER kubectl
 ENTRYPOINT [ "/usr/local/bin/kubectl.sh" ]
