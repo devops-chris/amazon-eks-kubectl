@@ -44,4 +44,4 @@ users:
 EOF
 
 # Pass through to kubectl
-/usr/local/bin/kubectl "$@"
+/usr/local/bin/"$@"
