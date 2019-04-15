@@ -25,6 +25,6 @@ The AWS CLI will automatically pick up AWS credentials from environment variable
 If you already have AWS credentials configured in `~/.aws/credentials` you can pass these through by running:
 
 ```
-$ docker run -v ~/.aws:/home/kubectl/.aws -e CLUSTER=demo devops-chris/kubectl get services
+$ docker run -v ~/.aws:/home/kubectl/.aws -e CLUSTER=demo thedevopschris/kubectl get services
 ```
 
